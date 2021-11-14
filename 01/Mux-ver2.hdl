@@ -1,0 +1,20 @@
+// Task 2.1P
+// Implement and Test the Mux in HDL
+// by Satika Jayawardena (5007899)
+
+/**
+ * Multiplexor:
+ * out = a if sel == 0
+ *       b otherwise
+ */
+
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+    
+    PARTS:
+    Nand(a=sel, b=sel, out=nand1);
+    Nand(a=b, b=sel, out=nand2);
+    Nand(a=nand1, b=a, out=nand3);
+    Nand(a=nand2, b=nand3, out=out);
+}
