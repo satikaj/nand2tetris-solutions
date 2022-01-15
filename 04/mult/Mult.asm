@@ -19,23 +19,20 @@ D;JEQ
 @R2
 M=D
 
-// If R1=0, jump to making R2=0. Else, make new variable factor=R1
+// If R1=0, jump to making R2=0
 @R1
 D=M
 
 @ZERO
 D;JEQ
 
-@factor
-M=D
-
 // Make new variable i=1 (counter for loop)
 @i
 M=1
 
 (LOOP)
-// Jump to program end if i=factor
-@factor
+// Jump to program end if i=R1
+@R1
 D=M
 
 @i
